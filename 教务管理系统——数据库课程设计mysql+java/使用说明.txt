@@ -1,0 +1,9 @@
+将SQl文件加载到mysql中（此处可用Navicat观看其中的表及其视图等）
+将程序包在eclipse中打开
+(此处附上本人的连接mysql)
+主机：localhost
+端口：3306
+用户名：root
+密码：13657588218man
+在src中找到db.properties文件更改自己的主机、端口、用户名即密码
+下载JDBC驱动包：mysql-connector-java（程序包中已有）
