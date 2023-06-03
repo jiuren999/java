@@ -1,0 +1,26 @@
+运行环境要求:
+安装了java 1.8+
+mysql 5+
+
+1.导入数据库wtf
+2.双击运行jar 之前,修改配置文件config.properties  
+右键 记事本打开
+填写自己的数据库的 
+ 用户名username
+密码password
+loginPageTitle=这里可以自定义改标题
+frameTitle
+3.双击运行jar
+
+backGround.jpg 是这个登录页的背景图
+icon.jpg是左上角的图标,图片删掉就不显示了
+
+帐号:admin
+密码:123
+
+
+4.如果想看源代码 修改代码
+如果出现中文乱码:
+改编码格式为GBK,确保格式为GBK
+
+改完代码 如何重新打包成jar包

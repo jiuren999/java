@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/rjgc/Adddialog.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/rjgc/Alterdialog.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/rjgc/Dbcon.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/rjgc/MainLogin.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/rjgc/Qframe.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/rjgc/Tianjiadialog.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>
