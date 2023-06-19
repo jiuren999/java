@@ -2,7 +2,7 @@ import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
 public class TestBinaryTree {
 
-    public static class TreeNode{
+    static class TreeNode{
         char val;
         TreeNode left;
         TreeNode right;
