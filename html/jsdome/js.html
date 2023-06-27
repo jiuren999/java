@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS dome</title>
+    <!-- <script src="tools.js"></script> -->
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>
+    <h3>猜数字游戏</h3>
+    玩家输入一个1-10的数字: <input type="text" id="input_num"><p></p>
+    <input type="button" value="查看结果" onclick="selectResult()">
+        <div id="result_div">
+            
+        </div>
+    </div>
+
+
+    <!-- <input id="btn1" type="button" value="点我一下" onclick="console.log('hello,javascript');">
+    <p></p>
+    <button></button> -->
+    <!-- <input type="button" value="增 加" onclick="add()">&nbsp;&nbsp;&nbsp;
+    <input type="button" value="修 改" onclick="up">&nbsp;&nbsp;&nbsp;
+    <input type="button" value="删 除" onclick="">&nbsp;&nbsp;&nbsp;
+    <input type="button" value="查 看" onclick="">&nbsp;&nbsp;&nbsp; -->
+    <script>
+
+        function selectResultJq(){
+            
+        }
+            //原生js猜数字
+        function selectResult(){
+            //产生随机数1-10
+            var randomNum = 1+Math.floor(Math.random()*10);
+           var userInputNum = document.getElementById("input_num").value;
+           var msg;
+           if(randomNum==userInputNum){
+                msg = "<h4>恭喜猜对了/h4>"
+           }else{
+            msg= "<h4>抱歉:猜错了,正确的数字是:</h4>"+randomNum;
+           }
+           document.getElementById("result_div").innerHTML=msg;
+        }
+        // function add(name , password){
+        //         alert("执行了增加方法\nname="+name + '\npassword='+password);
+        // }
+        // function up(){
+        //     alert("执行了修改方法");
+
+        //     for (const iterator of arguments) {
+        //         console.log(item);
+        //     }
+        // }
+        // var name = prompt("请输入你的名字"); 
+        // var sex = prompt("请输入你的性别");
+        // var age = prompt("请输入你的年龄");
+        // alert("名字:"+name +"\n性别:"+sex +"\n年龄"+age);
+
+    </script>
+</body>
+</html>
