@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表白墙</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+        <div style="width: 100%; text-align: center;">
+            <h2>表白墙</h2>
+            谁&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<input id="username"><p></p>
+            对谁&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;<input id="tousername">&nbsp;<p></p>
+            说什么:&nbsp;<input id="msg">&nbsp;<p></p>
+            <input type="button" value="提 交" onclick="mysub()">
+        </div >
+        <div id="div_allmsg" style="width: 100%; text-align: center;">
+
+        </div>
+        <script>
+            function mysub(){
+                    var iptUsername = jQuery("#username");
+                    var iptToUserName = jQuery("#tousername");
+                    var iptMsg = jQuery("#msg");
+
+                    if( iptUsername.val().trim()==""){
+                        alert("请输入你的名字!");
+                        iptUsername.focus();
+                        retur;
+                    }
+                    if( iptToUserName.val().trim()==""){
+                        alert("请输入对方的名字!");
+                        iptToUserName.focus();
+                        retur;
+                    }
+                    if( iptMsg.val().trim()==""){
+                        alert("请输入信息!");
+                        iptMsg.focus();  
+                        retur;
+                    }
+                    jQuery("#div_allmsg").append(iptUsername.val()+"对"+iptToUserName.val()+"说"+iptMsg.val()+"<p></p>")
+                    iptUsername.val("");
+                    iptToUserName.val("");
+                    iptMsg.val("");
+            }
+        </script>
+</body>
+</html>
