@@ -1,0 +1,49 @@
+/* 专门写 博客列表页的专属样式 */
+
+/* 设置整个blog div的样式 */
+.blog{
+    padding: 20px;
+
+}
+
+/* 设置博客的标题 */
+.blog .title{
+    font-size: 22px;
+    text-align: center;
+    font-weight: 900px;
+}
+/* 设置发布时间 */
+.blog .data{
+    text-align: center;
+    color:rgb(0, 128, 0);
+    padding: 15px;
+
+}
+/* 设置摘要部分 */
+.blog .desc{
+    text-indent: 2em;
+}
+
+.blog a{
+    /* 改成块级元素，此时才能设置尺寸 */
+    display: block;
+    width: 150px;
+    height: 40px;
+    border: 2px solid black;
+    /* 把里面的文字改一下颜色和下划线 */
+    color: black;
+    text-align: center;
+    text-decoration: none;
+
+    /* 当文字的行高和元素高度一样的时候，文字恰好是垂直居中的 */
+    line-height: 40px;
+    margin: 10px auto;
+
+    /* 加上背景切换过渡效果 all表示针对所有的变化都进行过度 2s的意思jiu'shi过渡的时间是2秒 */
+    transition: all 0.5s;
+
+}
+.blog a:hover{
+    background-color: gray;
+    color: white;
+}
