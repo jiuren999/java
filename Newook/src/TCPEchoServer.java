@@ -2,6 +2,9 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class TCPEchoServer {
 
@@ -11,10 +14,31 @@ public class TCPEchoServer {
         serverSocket = new ServerSocket(port);
     }
     public void start() throws IOException {
+        ExecutorService executorService = Executors.newCachedThreadPool();
         System.out.println("服务器启动");
-        while (true){
+        while (true) {
             Socket clientSocket = serverSocket.accept();
-            processConnection(clientSocket);
+//        while (true){
+//            Socket clientSocket = serverSocket.accept();
+//            Thread thread =new Thread(()->{
+//                try {
+//                    processConnection(clientSocket);
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            });
+//            thread.start();
+//        }
+            executorService.submit(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        processConnection(clientSocket);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
         }
     }
     //通过这个方法来处理一个链接
@@ -44,6 +68,10 @@ public class TCPEchoServer {
                 String response = process(request);
                 //3.把响应写回客户端
                 printWriter.println(response);
+                printWriter.flush();
+                System.out.printf("[%s:%d]  req:%s;  resp:%s\n",clientSocket.getInetAddress().toString(),
+                        clientSocket.getPort(),request,response);
+
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -53,5 +81,10 @@ public class TCPEchoServer {
     }
     private String process(String request) {
         return request;
+    }
+
+    public static void main(String[] args) throws IOException {
+        TCPEchoServer tcpEchoServer = new TCPEchoServer(9090);
+        tcpEchoServer.start();
     }
 }

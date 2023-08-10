@@ -48,7 +48,7 @@ public class UdpEchoServer {
     //如果后续写个别的服务器 不再回显了  而是有具体的业务了,就可以修改 process方法
     //根据需要来重新构造响应
     //之所以单独列一个方法 就是想让同学们知道 ,这是一个服务器中的关键环节
-    private String process(String request) {
+    public String process(String request) {
         return request;
     }
 

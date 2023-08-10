@@ -28,6 +28,7 @@ public class TCPEchoClient {
                 //2.把读取的内容构造成请求发送给服务器
                 //注意这里的发送是带有换行的
                 printWriter.println(request);
+                printWriter.flush();
                 //3.从服务器读取响应内容
                 String response = scannerFromSocket.next();
                 //4.把响应结果显示到控制台上
